@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding</title>
+  <style>
+    body {
+      background: url('image1.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+    }
+    .logo {
+      font-family: helvetica;
+    }
+    header {
+      background-color: rgb(170, 170, 170);
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-inline: 20px;
+    }
+    main {
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .schedules {
+      background-color: lightpink;
+      color: white;
+      width: 400px;
+      font-family: helvetica;
+      text-align: center;
+      border-radius: 60px;
+      padding: 10px 20px; /* same as permissions */
+    }
+    .hero {
+      text-align: center;
+      font-family: helvetica;
+    }
+    .sub-hero {
+      text-align: center;
+    }
+    .hero-button {
+      text-align: center;
+    }
+    .hero-button a {
+      background-color: rgb(255, 89, 114);
+      padding: 10px 20px;
+      text-decoration: none;
+      color: white;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(255, 89, 114, 0.8);
+      animation: glow 1.5s infinite alternate;
+    }
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 10px rgba(255, 89, 114, 0.8);
+      }
+      to {
+        box-shadow: 0 0 20px rgba(255, 89, 114, 1);
+      }
+    }
+    .image {
+      width: 300px;
+      border-radius: 10px;
+    }
+    .occasion-container center h2 {
+      color: lightcoral;
+      font-family: helvetica;
+      font-size: 35px;
+    }
+    .occasion-container h3 {
+      font-family: verdana;
+    }
+    .occasion-container center p {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .permissions {
+      background-color: lightblue;
+      padding: 10px 20px;
+      border-radius: 20px;
+    }
+    .permissions p {
+      font-size: 20px;
+    }
+    .permissions li {
+      color: rgb(247, 111, 111);
+    }
+    .form-container {
+      background-color: rgba(255, 182, 193, 0.9); /* semi-transparent pink */
+      position: absolute;
+      right: 0;
+      left: 0;
+      padding: 10px 20px;
+    }
+    .form-container h2 {
+      font-size: 28px;
+      font-family: verdana;
+      color: white;
+    }
+    .form-container input {
+      padding: 10px 15px;
+      margin-bottom: 3px;
+      border: solid 1px white;
+      border-radius: 5px;
+      width: 300px;
+    }
+    .form-container button {
+      background-color: white;
+      color: lightpink;
+      border: solid 1px white;
+      border-radius: 20px;
+      margin-top: 10px;
+      font-size: 15px;
+      padding: 10px 30px;
+    }
+    .form-container button:active {
+      background-color: lightblue;
+      color: white;
+      transition: 0.2s;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <h2 class="logo">Wedding Invite</h2>
+    </div>
+    <div class="menu-container"></div>
+  </header>
+
+  <main>
+    <div class="schedules">
+      7th November 2026 11:00,<br>
+      Showgrounds Banquet Hall
+    </div>
+    <div class="hero-section">
+      <div class="hero-container">
+        <h1 class="hero">Tebogo Thipe <br> & <br> Lorenzo Motseki</h1>
+      </div>
+      <div class="sub-header-container">
+        <h3 class="sub-hero">A strong story built over 2 years of friendship and 8 years
+          of dating, now blossoming into marriage.
+        </h3>
+      </div>
+      <div class="hero-button">
+        <a href="#form-section" class="hero-button">Accept Invite</a>
+      </div>
+    </div>
+  </main>
+
+  <div class="occasion-container">
+    <center>
+      <h2 class="name">Tebogo Thipe</h2>
+      <h3>Becoming Mrs. Motseki</h3>
+      <p class="words">With joy and gratitude, we invite you to
+        witness the union of these two love birds as they vow.
+      </p>
+      <div class="image-container">
+        <img id="image-holder" class="image" alt="Wedding couple photo">
+      </div>
+    </center>
+  </div>
+
+  <div class="permissions">
+    <center>
+      <p>Kindly note:</p>
+      <ul>
+        <li>No alcohol will be served / allowed</li>
+        <li>No traditional wear</li>
+        <li>No children under 12 years</li>
+        <li>Attendance limited: you and guests (maximum of 3 people)</li>
+        <li>Dress Theme: Emerald Green & Gold (Mandatory)</li>
+      </ul>
+      <p>Dress in elegance, celebrate in love, and join us for an extraordinary day unlike any other.</p>
+    </center>
+  </div>
+
+  <div id="form-section" class="form-container">
+    <h2>Invitation Form</h2>
+    <input type="text" id="fullName" placeholder="Full Name"><br>
+    <input type="text" id="phone" placeholder="Phone Number"><br>
+    <p>Others</p>
+    <input type="text" id="guest1" placeholder="Guest name"><br>
+    <input type="text" id="guest2" placeholder="Guest name"><br>
+    <button class="submit-button">Submit</button>
+  </div>
+
+  <footer></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    const images = [
+      'image1.jpeg','image2.jpeg','image3.jpeg','image4.jpeg','image5.jpeg',
+      'image6.jpeg','image7.jpeg','image8.jpeg','image9.jpeg'
+    ];
+    let count = 0,
+    image_holder = document.getElementById("image-holder");
+    image_holder.src = images[count];
+    let total_images = images.length;
+
+    setInterval(()=>{
+      image_holder.src = images[count];
+      count++;
+      if(count >= total_images){
+        count = 0;
+      }
+    },4000);
+
+    // Initialize EmailJS
+    (function(){
+      emailjs.init({
+        publicKey: "w4b8SBE-WPxbvodiw",
+      });
+    })();
+
+    document.addEventListener("DOMContentLoaded", function () {
+      emailjs.init("w4b8SBE-WPxbvodiw");
+      const button = document.querySelector(".submit-button");
+
+      button.addEventListener("click", function() {
+        button.textContent = `sending.....`;
+        const fullName = document.getElementById("fullName").value;
+        const phone = document.getElementById("phone").value;
+        const guest1 = document.getElementById("guest1").value;
+        const guest2 = document.getElementById("guest2").value;
+
+        var templateParams = {
+          full_name: fullName,
+          phone_number: phone,
+          guest_one: guest1,
+          guest_two: guest2
+        };
+
+        emailjs.send("service_0w19jzw", "template_gjbst9q", templateParams)
+          .then(() => {
+            alert("Your Invitation form has been sent");
+            button.textContent = "Submit";
+            document.getElementById("fullName").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("guest1").value = "";
+            document.getElementById("guest2").value = "";
+          })
+          .catch(() => {
+            console.log("Check your network!");
+          });
+      });
+    });
+  </script>
+</body>
+</html>
